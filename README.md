@@ -7,10 +7,11 @@ Once they are done with their tasks they can also remove them from the list.
 
 **************The Home Screen**************
 
-![](../../../Users/patel/AppData/Local/Temp/ae3495a3-3a52-4286-b1b3-4beca423ea37.jpg)
+![ae3495a3-3a52-4286-b1b3-4beca423ea37](https://user-images.githubusercontent.com/85575373/224495053-c5bd997d-81eb-4154-9114-9136066fa954.jpg)
+
 
 
 **************The Add Task Screen**************
 
 
-![](../../../Users/patel/AppData/Local/Temp/36f2a946-0d8e-4bac-8e5d-2d2be9d5f85c.jpg)
+![36f2a946-0d8e-4bac-8e5d-2d2be9d5f85c](https://user-images.githubusercontent.com/85575373/224495068-cc1923b2-1b1c-4a1c-88bd-89d06f8e04a5.jpg)
