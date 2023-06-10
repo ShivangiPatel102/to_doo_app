@@ -15,3 +15,7 @@ Once they are done with their tasks they can also remove them from the list.
 
 
 ![36f2a946-0d8e-4bac-8e5d-2d2be9d5f85c](https://user-images.githubusercontent.com/85575373/224495068-cc1923b2-1b1c-4a1c-88bd-89d06f8e04a5.jpg)
+
+
+**************The Update Task Screen**************
+![image](https://github.com/ShivangiPatel102/to_doo_app/assets/85575373/ab07c20f-34ef-41b7-acb4-34151277b876)
