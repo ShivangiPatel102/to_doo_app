@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:to_do_list_app/model/task_data.dart';
+import 'package:to_do_list_app/screens/change_task_screen.dart';
 import 'package:to_do_list_app/widgets/task_tile.dart';
 
 class TasksList extends StatelessWidget {
@@ -15,23 +16,34 @@ class TasksList extends StatelessWidget {
           itemBuilder: (context, index) {
             final currentTask = taskData.tasks[index];
             return TaskTile(
-              isChecked:currentTask.isDone,
-              taskTitle:  currentTask.name,
+              isChecked: currentTask.isDone,
+              taskTitle: currentTask.name,
               checkboxCallback: (bool? checkboxState) {
-                if(checkboxState != null){
+                if (checkboxState != null) {
                   taskData.updateTask(currentTask);
                 }
               },
-              longPressCallback: (){
+              longPressCallback: () {
                 taskData.deleteTask(currentTask);
+              },
+              doublePressCallback: () {
+                showModalBottomSheet(
+                  context: context,
+                  builder: (context) => SingleChildScrollView(
+                    child: Container(
+                      padding: EdgeInsets.only(
+                          bottom: MediaQuery.of(context).viewInsets.bottom),
+                      child: ChangeTaskScreen(task: currentTask,),
+                    ),
+                  ),
+                  // isScrollControlled: true,
+                );
               },
             );
           },
-          itemCount:  taskData.taskCount,
+          itemCount: taskData.taskCount,
         );
       },
-
     );
   }
 }
-

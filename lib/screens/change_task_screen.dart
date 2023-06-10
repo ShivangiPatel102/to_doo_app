@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:to_do_list_app/constants.dart';
 import 'package:to_do_list_app/model/task_data.dart';
+import 'package:to_do_list_app/model/tasks.dart';
 
-class AddTaskScreen extends StatelessWidget {
+class ChangeTaskScreen extends StatelessWidget {
+  ChangeTaskScreen({required this.task});
+  Task task;
   String newTaskTitle = '';
 
   @override
@@ -24,7 +27,7 @@ class AddTaskScreen extends StatelessWidget {
           children: <Widget>[
             //Text Add task
             Text(
-              'Add Task',
+              'Update Task',
               textAlign: TextAlign.center,
               style: TextStyle(
                   fontSize: 30.0,
@@ -36,19 +39,19 @@ class AddTaskScreen extends StatelessWidget {
               autofocus: false,
               textAlign: TextAlign.center,
               onChanged: (newText) {
-                  newTaskTitle = newText;
+                newTaskTitle = newText;
               },
             ),
             SizedBox(height: 10.0,),
             //Add button
             TextButton(
                 onPressed: () {
-                  Provider.of<TaskData>(context,listen: false).addTask(newTaskTitle);
+                  Provider.of<TaskData>(context,listen: false).changeTaskName(task, newTaskTitle);
                   Navigator.pop(context);
                 },
                 style: TextButton.styleFrom(backgroundColor: kPrimaryAppColor ),
                 child: Text(
-                  'Add',
+                  'Update',
                   style: TextStyle(color: Colors.white),
                 ),),
           ],

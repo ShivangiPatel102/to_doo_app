@@ -6,26 +6,31 @@ class TaskTile extends StatelessWidget {
   final String taskTitle;
   final Function checkboxCallback;
   final VoidCallback longPressCallback;
-  TaskTile({required this.isChecked, required this.taskTitle, required this.checkboxCallback, required this.longPressCallback});
+  final VoidCallback doublePressCallback;
+  TaskTile({required this.isChecked, required this.taskTitle, required this.checkboxCallback, required this.longPressCallback,required this.doublePressCallback});
   @override
   Widget build(BuildContext context) {
-    return ListTile(
+    return GestureDetector(
       onLongPress: longPressCallback,
-      title: Text(
-        taskTitle,
-        style: TextStyle(
-          decoration: isChecked ? TextDecoration.lineThrough : null,
-          fontSize: 22.0,
-          fontFamily: "Rubik",
-          // fontWeight: FontWeight.w400,
+      onDoubleTap: doublePressCallback,
+      child: ListTile(
+
+        title: Text(
+          taskTitle,
+          style: TextStyle(
+            decoration: isChecked ? TextDecoration.lineThrough : null,
+            fontSize: 22.0,
+            fontFamily: "Rubik",
+            // fontWeight: FontWeight.w400,
+
+          ),
 
         ),
-
-      ),
-      trailing: Checkbox(
-        activeColor: kPrimaryAppColor,
-        onChanged: checkboxCallback as void Function(bool?)?,
-        value: isChecked,
+        trailing: Checkbox(
+          activeColor: kPrimaryAppColor,
+          onChanged: checkboxCallback as void Function(bool?)?,
+          value: isChecked,
+        ),
       ),
     );
   }
